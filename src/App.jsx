@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 
 function App() {
-  // Efecto de brillo que sigue al mouse para las tarjetas (Spotlight)
   useEffect(() => {
     const handleMouseMove = (e) => {
       document.querySelectorAll('.card-spotlight').forEach(card => {
@@ -36,7 +35,7 @@ function App() {
           <a href="#experiencia" className="hover:text-blue-400 transition">Experiencia</a>
           <a href="#habilidades" className="hover:text-blue-400 transition">Habilidades</a>
           
-          <a href="./public/paul_delgado_CV.pdf" download="CV_Paul_Delgado.pdf" className="btn-iluminado relative overflow-hidden bg-blue-500/20 backdrop-blur-xl border border-blue-400/30 text-blue-200 px-4 py-2 rounded-lg transition-all duration-500 inline-flex items-center gap-2 hover:text-white">
+          <a href="/paul_delgado_CV.pdf" download="CV_Paul_Delgado.pdf" className="btn-iluminado relative overflow-hidden bg-blue-500/20 backdrop-blur-xl border border-blue-400/30 text-blue-200 px-4 py-2 rounded-lg transition-all duration-500 inline-flex items-center gap-2 hover:text-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
@@ -73,12 +72,14 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="relative group w-full md:w-[450px] flex justify-center">
-            <div className="absolute -inset-3 bg-white/40 rounded-3xl blur-3xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
-            <img src=".//lupa.png"
-              class="w-72 transition-transform duration-700 ease-out 
-              hover:scale-105 animate-float"></img>
+          <div className="relative w-full md:w-[450px] flex justify-center">
+            <img 
+              src="/lupa.png"
+              alt="Lupa decorativa"
+              className=" w-72 drop-shadow-xl transition-transform duration-500 ease-out hover:scale-110 hover:-translate-y-2 animate-float"
+            />
           </div>
+     
         </section>
 
         <div className="max-w-10xl mx-auto px-10">
@@ -99,7 +100,7 @@ function App() {
             </div>
             <div className="md:w-3/4">
               <p className="text-slate-400 leading-relaxed">
-                Soy apasionado de la intersencción entre la ciencia de datos y el desarrollo de software como estudiante de Ciencias de Datos e Inteligencia Artificial, mi enfoque se centra en transformar datos complejos en soluciones tecnológicas accionables, especializándome en Ingeniería de Datos y Optimización mediante algoritmos avanzados. Me enfoco en construir sistemas que no solo analicen el pasado, sino que optimicen el futuro. Mi objetivo es aprender, construir y mejorar continuamente en cada línea de código y cada modelo que desarrollo.
+                Soy apasionado de la intersección entre la ciencia de datos y el desarrollo de software como estudiante de Ciencias de Datos e Inteligencia Artificial, mi enfoque se centra en transformar datos complejos en soluciones tecnológicas accionables, especializándome en Ingeniería de Datos y Optimización mediante algoritmos avanzados. Me enfoco en construir sistemas que no solo analicen el pasado, sino que optimicen el futuro. Mi objetivo es aprender, construir y mejorar continuamente en cada línea de código y cada modelo que desarrollo.
               </p>
             </div>
           </div>
@@ -182,7 +183,7 @@ function App() {
                   Ver GitHub
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </a>
-                <a href="./public/Informe_proyecto.pdf" className="text-sm font-semibold text-slate-500 hover:text-white transition relative z-10">Carpeta del proyecto</a>
+                <a href="/Informe_proyecto.pdf" className="text-sm font-semibold text-slate-500 hover:text-white transition relative z-10">Carpeta del proyecto</a>
               </div>
             </div>
           </div>
