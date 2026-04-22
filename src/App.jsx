@@ -322,7 +322,7 @@ function App() {
               </div>
               
               <div className="flex flex-wrap gap-2 relative z-10">
-                {['Python', 'LangGraph', 'Machine Learning', 'PostgreSQL', 'Pandas', 'NLP'].map((skill) => (
+                {['LangGraph', 'Machine Learning', 'Pandas', 'NLP'].map((skill) => (
                   <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-slate-300 hover:border-purple-500/50 hover:text-purple-300 transition-all cursor-default">
                     {skill}
                   </span>
@@ -360,7 +360,7 @@ function App() {
                 </div>
                 <h3 className="text-xl font-bold text-white">Infra & Business</h3>
               </div>
-              
+
               <div className="flex flex-wrap gap-2 relative z-10">
                 {['ETL (PDI)', 'Redes T568A/B', 'Pentaho', 'Power BI', 'Linux', 'Data Warehouse'].map((skill) => (
                   <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-slate-300 hover:border-emerald-500/50 hover:text-emerald-300 transition-all cursor-default">
@@ -370,8 +370,42 @@ function App() {
               </div>
             </div>
 
-          </div>
+            {/* INFRASTRUCTURE & BUSINESS - NUEVA*/}
+            <div className="card-spotlight relative group bg-white/5 backdrop-blur-2xl border border-white/10 p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:border-red-500/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="flex items-center gap-3 mb-6 relative z-10">
+                <div className="p-2 bg-red-500/20 rounded-lg text-red-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M12 2v4"></path>
+                  <path d="M12 18v4"></path>
+                  <path d="M4.93 4.93l2.83 2.83"></path>
+                  <path d="M16.24 16.24l2.83 2.83"></path>
+                  <path d="M2 12h4"></path>
+                  <path d="M18 12h4"></path>
+                  <path d="M4.93 19.07l2.83-2.83"></path>
+                  <path d="M16.24 7.76l2.83-2.83"></path>
+                </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">Stack Tecnológico</h3>
+              </div>
+
+              <div className="flex flex-wrap gap-2 relative z-10">
+                {['Python', 'PostgreSQL', 'Java'].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-slate-300 hover:border-red-500/50 hover:text-red-300 transition-all cursor-default">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            </div>
         </section>
+
+        <div className="max-w-10xl mx-auto px-10">
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-700 to-transparent opacity-50"></div>
+        </div>
 
         {/* SECCIÓN CONTACTO / TELÉFONO */}
         <section id="contacto" className="py-20 px-6 md:px-10 max-w-4xl mx-auto text-center">
