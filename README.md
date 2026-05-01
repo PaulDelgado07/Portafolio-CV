@@ -1,4 +1,4 @@
-# Portafolio - Paúl David Delgado Vergara (PDDV)
+# Portafolio - Paúl David Delgado Vergara
 
 ¡Bienvenido al código fuente de mi portafolio personal! Soy estudiante de Ciencia de Datos e Inteligencia Artificial, y un desarrollador apasionado por transformar datos complejos en soluciones tecnológicas accionables, uniendo la ingeniería de datos, el aprendizaje automático y el desarrollo web moderno.
 
@@ -34,6 +34,36 @@ Mi objetivo profesional es aprender, construir y mejorar continuamente. Me espec
 - **Investigación IA:** Arquitecturas escalables utilizando **LangGraph** para agentes inteligentes.
 - **Productividad de Desarrollo:** Configuración y automatización del editor de código Neovim.
 - **Tallerista:** Análisis de datos para la predicción de temperatura corporal orientada a la eficiencia climática.
+
+## Cómo ejecutar este proyecto localmente
+
+Si deseas explorar el código y ejecutar el proyecto en tu máquina local:
+
+1. **Clona este repositorio:**
+
+   ```bash
+   git clone https://github.com/PaulDelgado07/portafolio-react.git
+   cd portafolio-react
+   ```
+
+2. **Instala las dependencias necesarias:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Inicia el servidor de desarrollo de Vite:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Abre en tu navegador:**
+   Navega a `http://localhost:5173` para ver el portafolio en acción.
+
+## Link del deployment del portafolio
+
+https://portafolio-cv-nu.vercel.app/
 
 ## Contacto
 
