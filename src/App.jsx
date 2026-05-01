@@ -57,39 +57,86 @@ function App() {
               </span>
               <span className="text-xs font-medium text-blue-400 uppercase tracking-wider">Disponible para proyectos</span>
             </div>
-            <h2 className="text-5xl font-extrabold mb-4 leading-tight">Paúl David <span className="text-blue-500">Delgado Vergara</span></h2>
+            <h2 className="text-5xl font-extrabold mb-4 leading-tight">
+              Paúl David{" "}
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #60a5fa, #a78bfa, #38bdf8)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Delgado Vergara
+              </span>   
+            </h2>
             <p className="text-slate-400 text-lg leading-relaxed">
               Estudiante de Ciencia de Datos y Desarrollo. Apasionado por crear soluciones útiles que unan tecnología, visión analítica y diseño.
             </p>
             <div className="mt-8 flex gap-4">
 
-            <a href="#Proyectos" className="group relative overflow-hidden inline-flex items-center px-7 py-3 rounded-2xl font-medium transition-all duration-500 active:scale-95"
+            {/* BOTON PROYECTOS */}
+            <a href="#Proyectos"
+              className="relative overflow-hidden inline-flex items-center justify-center font-medium cursor-pointer transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
               style={{
-                background: "rgba(255,255,255,0.06)",
-                backdropFilter: "blur(24px)",
-                WebkitBackdropFilter: "blur(24px)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                color: "rgba(255,255,255,0.7)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.18)",
+                padding: "15px 40px",
+                borderRadius: "100px",
+                fontSize: "13px",
+                background: "rgba(139, 92, 246, 0.10)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                border: "1px solid rgba(167, 139, 250, 0.32)",
+                color: "rgba(255,255,255,0.85)",
+                boxShadow: "0 4px 20px rgba(139, 92, 246, 0.20), inset 0 1px 0 rgba(255,255,255,0.12)",
+                textDecoration: "none",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = "rgba(139, 92, 246, 0.35)";
+                e.currentTarget.style.color = "#fff";
+                e.currentTarget.style.boxShadow = "0 10px 32px rgba(139, 92, 246, 0.35)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = "rgba(139, 92, 246, 0.20)";
+                e.currentTarget.style.color = "#c4b5fd";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(139, 92, 246, 0.20), inset 0 1px 0 rgba(255,255,255,0.12)";
               }}
             >
-            {/* Línea de luz superior */}
-            <span className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
-            {/* Reflejo diagonal suave */}
-            <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent rounded-2xl" />
-            {/* Hover: cristal más vivo */}
-            <span className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            style={{ background: "rgba(255,255,255,0.05)", boxShadow: "inset 0 0 20px rgba(255,255,255,0.06)" }}
-            />
-            <span className="relative z-10 tracking-wide group-hover:text-white transition-colors duration-400">
-                Proyectos
-            </span>
+              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent" />
+              <span className="relative z-10">Proyectos</span>
             </a>
 
-              <a href="#contacto" className="relative overflow-hidden bg-blue-500/20 backdrop-blur-xl border border-blue-400/30 text-blue-200 px-8 py-3 rounded-xl font-bold transition-all duration-500 hover:bg-blue-400/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:text-white active:scale-95">
-                <span className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-40 pointer-events-none"></span>
-                <span className="relative z-10">Contacto</span>
-              </a>
+            {/* BOTON CONTACTO */}
+            <a href="#contacto"
+              className="relative overflow-hidden inline-flex items-center justify-center font-medium cursor-pointer transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+              style={{
+                padding: "10px 26px",
+                borderRadius: "100px",
+                fontSize: "13px",
+                background: "rgba(139, 92, 246, 0.20)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                border: "1px solid rgba(167, 139, 250, 0.32)",
+                color: "#c4b5fd",
+                boxShadow: "0 4px 20px rgba(139, 92, 246, 0.20), inset 0 1px 0 rgba(255,255,255,0.12)",
+                textDecoration: "none",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = "rgba(139, 92, 246, 0.35)";
+                e.currentTarget.style.color = "#fff";
+                e.currentTarget.style.boxShadow = "0 10px 32px rgba(139, 92, 246, 0.35)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = "rgba(139, 92, 246, 0.20)";
+                e.currentTarget.style.color = "#c4b5fd";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(139, 92, 246, 0.20), inset 0 1px 0 rgba(255,255,255,0.12)";
+              }}
+            >
+              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent" />
+              <span className="relative z-10">Contacto</span>
+            </a>
+
             </div>
           </div>
           <div className="relative w-full md:w-[450px] flex justify-center">
@@ -97,9 +144,8 @@ function App() {
               src="/lupa.png"
               alt="Lupa decorativa"
               className=" w-72 drop-shadow-xl transition-transform duration-500 ease-out hover:scale-110 hover:-translate-y-2 animate-float"
-            />
+            />          
           </div>
-     
         </section>
 
         <div className="max-w-10xl mx-auto px-10">
