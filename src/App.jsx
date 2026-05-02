@@ -19,24 +19,178 @@ function App() {
     <div className="min-h-screen text-white font-sans selection:bg-blue-500/30">
       
       {/* NAVBAR */}
-      <header className="p-6 flex justify-between items-center border-b border-slate-800 sticky top-0 bg-[#0b1223]/80 backdrop-blur-md z-50">
+      
+      <header className="p-6 flex justify-between items-center sticky top-0 z-50 relative overflow-hidden"
+        style={{
+          background: "rgba(255,255,255,0.04)",
+          backdropFilter: "blur(28px)",
+          WebkitBackdropFilter: "blur(28px)",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
+          boxShadow: "0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(255,255,255,0.03)",
+        }}
+      >
+        {/* Línea de luz superior — firma Apple */}
+        <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+          style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent)" }} />
+
+        {/* Reflejo diagonal interior */}
+        <span className="pointer-events-none absolute inset-0"
+          style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 50%)" }} />
+
+        {/* Logo */}
         <div className="flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"
+            style={{ color: "#a78bfa" }}>
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
             <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
             <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
           </svg>
-          <h1 className="text-xl font-bold text-blue-400">PDDV</h1>
+          <h1 className="text-xl font-bold"
+            style={{
+              background: "linear-gradient(135deg, #60a5fa, #a78bfa, #38bdf8)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+            PDDV
+          </h1>
         </div>
-        <nav className="hidden md:flex space-x-6 text-sm items-center">
-          <a href="#SobreMi" className="hover:text-blue-400 transition">Sobre Mi</a>
-          <a href="#Proyectos" className="hover:text-blue-400 transition">Proyectos</a>
-          <a href="#experiencia" className="hover:text-blue-400 transition">Experiencia</a>
-          <a href="#habilidades" className="hover:text-blue-400 transition">Habilidades</a>
-          
-          <a href="/paul_delgado_CV.pdf" download="CV_Paul_Delgado.pdf" className="btn-iluminado relative overflow-hidden bg-blue-500/20 backdrop-blur-xl border border-blue-400/30 text-blue-200 px-4 py-2 rounded-lg transition-all duration-500 inline-flex items-center gap-2 hover:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10">
+
+        {/* Nav */}
+        <nav
+          className="hidden md:flex space-x-1 text-sm items-center relative overflow-hidden"
+          style={{
+            background: "rgba(255,255,255,0.06)",
+            backdropFilter: "blur(24px)",
+            WebkitBackdropFilter: "blur(24px)",
+            border: "1px solid rgba(255,255,255,0.12)",
+            borderRadius: "100px",
+            padding: "6px 8px",
+            boxShadow: "0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(255,255,255,0.04)",
+          }}
+        >
+          {/* Línea de luz superior */}
+          <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+            style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent)" }} />
+
+          {/* Reflejo diagonal */}
+          <span className="pointer-events-none absolute inset-0"
+            style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.08) 0%,transparent 50%)", borderRadius: "100px" }} />
+
+          <a href="#SobreMi"
+            className="relative z-10 transition-all duration-300 hover:text-white rounded-full"
+            style={{
+              color: "rgba(255,255,255,0.6)",
+              textDecoration: "none",
+              padding: "6px 16px",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+              e.currentTarget.style.background = "transparent";
+            }}
+          >
+            Sobre Mi
+          </a>
+
+          <a href="#Proyectos"
+            className="relative z-10 transition-all duration-300 hover:text-white rounded-full"
+            style={{
+              color: "rgba(255,255,255,0.6)",
+              textDecoration: "none",
+              padding: "6px 16px",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+              e.currentTarget.style.background = "transparent";
+            }}
+          >
+            Proyectos
+          </a>
+
+          <a href="#experiencia"
+            className="relative z-10 transition-all duration-300 hover:text-white rounded-full"
+            style={{
+              color: "rgba(255,255,255,0.6)",
+              textDecoration: "none",
+              padding: "6px 16px",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+              e.currentTarget.style.background = "transparent";
+            }}
+          >
+            Experiencia
+          </a>
+
+          <a href="#habilidades"
+            className="relative z-10 transition-all duration-300 hover:text-white rounded-full"
+            style={{
+              color: "rgba(255,255,255,0.6)",
+              textDecoration: "none",
+              padding: "6px 16px",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+              e.currentTarget.style.background = "transparent";
+            }}
+          >
+            Habilidades
+          </a>
+
+          {/* Botón Descargar CV — sin tocar href ni download */}
+          <a href="/paul_delgado_CV.pdf" download="CV_Paul_Delgado.pdf"
+            className="relative overflow-hidden inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+            style={{
+              padding: "8px 18px",
+              borderRadius: "100px",
+              fontSize: "13px",
+              fontWeight: "500",
+              background: "rgba(139,92,246,0.18)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              border: "1px solid rgba(167,139,250,0.30)",
+              color: "#c4b5fd",
+              boxShadow: "0 4px 20px rgba(139,92,246,0.18), inset 0 1px 0 rgba(255,255,255,0.12)",
+              textDecoration: "none",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = "rgba(139,92,246,0.32)";
+              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.boxShadow = "0 8px 28px rgba(139,92,246,0.38)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = "rgba(139,92,246,0.18)";
+              e.currentTarget.style.color = "#c4b5fd";
+              e.currentTarget.style.boxShadow = "0 4px 20px rgba(139,92,246,0.18), inset 0 1px 0 rgba(255,255,255,0.12)";
+            }}
+          >
+            {/* Luz superior botón */}
+            <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+              style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent)" }} />
+            {/* Reflejo botón */}
+            <span className="pointer-events-none absolute inset-0"
+              style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.13) 0%,transparent 55%)", borderRadius: "100px" }} />
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" strokeWidth="2"
+              strokeLinecap="round" strokeLinejoin="round" className="relative z-10">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -45,7 +199,7 @@ function App() {
           </a>
         </nav>
       </header>
-
+      
       <main>
         {/* HERO SECTION */}
         <section className="py-20 px-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
