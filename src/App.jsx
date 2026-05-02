@@ -338,18 +338,79 @@ function App() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Proyecto 1: AdventureWorks */}
-            <div className="card-spotlight relative group bg-white/5 backdrop-blur-2xl border border-white/20 p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/10">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-30 pointer-events-none"></div>
+            <div className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(32px)",
+                WebkitBackdropFilter: "blur(32px)",
+                border: "1px solid rgba(255,255,255,0.09)",
+                boxShadow: `
+                  0 8px 40px rgba(0,0,0,0.3),
+                  0 1px 0 rgba(255,255,255,0.12) inset,
+                  0 -1px 0 rgba(255,255,255,0.03) inset,
+                  1px 0 0 rgba(255,255,255,0.05) inset,
+                  -1px 0 0 rgba(255,255,255,0.05) inset
+                `,
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.16)";
+                e.currentTarget.style.boxShadow = `
+                  0 24px 64px rgba(0,0,0,0.4),
+                  0 1px 0 rgba(255,255,255,0.22) inset,
+                  0 -1px 0 rgba(255,255,255,0.05) inset,
+                  1px 0 0 rgba(255,255,255,0.08) inset,
+                  -1px 0 0 rgba(255,255,255,0.08) inset
+                `;
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)";
+                e.currentTarget.style.boxShadow = `
+                  0 8px 40px rgba(0,0,0,0.3),
+                  0 1px 0 rgba(255,255,255,0.12) inset,
+                  0 -1px 0 rgba(255,255,255,0.03) inset,
+                  1px 0 0 rgba(255,255,255,0.05) inset,
+                  -1px 0 0 rgba(255,255,255,0.05) inset
+                `;
+              }}
+            >
+              {/* Línea de luz superior */}
+              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+                style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)" }} />
+
+              {/* Reflejo diagonal principal */}
+              <span className="pointer-events-none absolute inset-0"
+                style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.07) 0%,transparent 45%)", borderRadius: "24px" }} />
+
+              {/* Destello esquina inferior derecha */}
+              <span className="pointer-events-none absolute -bottom-8 -right-8 w-40 h-40"
+                style={{ background: "radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%)" }} />
+
+              {/* ── TODO LO DE ABAJO SIN TOCAR ── */}
               <div className="flex items-center gap-3 mb-6 relative z-10">
                 <div className="p-2 bg-blue-500/20 rounded-lg backdrop-blur-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
                 </div>
                 <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Data Engineering</span>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition relative z-10">Data Warehouse AdventureWorks</h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-6 relative z-10">Diseño e implementación de un Data Warehouse corporativo usando PDI (Pentaho Data Integration) y PostgreSQL. Incluye modelado en estrella y definición de KPIs estratégicos.</p>
-              <a href="https://github.com/PaulDelgado07/MiPrimerRepo/tree/main/Proyecto%20del%201er%20Parcial%20Almacenes%20de%20datos" className="flex items-center gap-2 text-sm font-semibold text-white hover:text-blue-400 transition relative z-10">
-                Ver GitHub <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition relative z-10">
+                Data Warehouse AdventureWorks
+              </h3>
+
+              <p className="text-slate-300 text-sm leading-relaxed mb-6 relative z-10">
+                Diseño e implementación de un Data Warehouse corporativo usando PDI (Pentaho Data Integration) y PostgreSQL. Incluye modelado en estrella y definición de KPIs estratégicos.
+              </p>
+
+              <a href="https://github.com/PaulDelgado07/MiPrimerRepo/tree/main/Proyecto%20del%201er%20Parcial%20Almacenes%20de%20datos"
+                className="flex items-center gap-2 text-sm font-semibold text-white hover:text-blue-400 transition relative z-10">
+                Ver GitHub
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
               </a>
             </div>
 
