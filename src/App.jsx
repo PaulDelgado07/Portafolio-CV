@@ -415,8 +415,55 @@ function App() {
             </div>
 
             {/* PROYECTO 2: PROGRAMACIÓN DE TURNOS */}
-            <div className="card-spotlight relative group bg-white/5 backdrop-blur-2xl border border-white/20 p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/10">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-30 pointer-events-none"></div>
+            <div className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(32px)",
+                WebkitBackdropFilter: "blur(32px)",
+                border: "1px solid rgba(255,255,255,0.09)",
+                boxShadow: `
+                  0 8px 40px rgba(0,0,0,0.3),
+                  0 1px 0 rgba(255,255,255,0.12) inset,
+                  0 -1px 0 rgba(255,255,255,0.03) inset,
+                  1px 0 0 rgba(255,255,255,0.05) inset,
+                  -1px 0 0 rgba(255,255,255,0.05) inset
+                `,
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.16)";
+                e.currentTarget.style.boxShadow = `
+                  0 24px 64px rgba(0,0,0,0.4),
+                  0 1px 0 rgba(255,255,255,0.22) inset,
+                  0 -1px 0 rgba(255,255,255,0.05) inset,
+                  1px 0 0 rgba(255,255,255,0.08) inset,
+                  -1px 0 0 rgba(255,255,255,0.08) inset
+                `;
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)";
+                e.currentTarget.style.boxShadow = `
+                  0 8px 40px rgba(0,0,0,0.3),
+                  0 1px 0 rgba(255,255,255,0.12) inset,
+                  0 -1px 0 rgba(255,255,255,0.03) inset,
+                  1px 0 0 rgba(255,255,255,0.05) inset,
+                  -1px 0 0 rgba(255,255,255,0.05) inset
+                `;
+              }}
+            >
+              {/* Línea de luz superior */}
+              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+                style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)" }} />
+
+              {/* Reflejo diagonal principal */}
+              <span className="pointer-events-none absolute inset-0"
+                style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.07) 0%,transparent 45%)", borderRadius: "24px" }} />
+
+              {/* Destello esquina inferior derecha */}
+              <span className="pointer-events-none absolute -bottom-8 -right-8 w-40 h-40"
+                style={{ background: "radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%)" }} />
+
               <div className="flex items-center gap-3 mb-6 relative z-10">
                 <div className="p-2 bg-blue-500/20 rounded-lg backdrop-blur-md">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -438,8 +485,54 @@ function App() {
             </div>
 
             {/* PROYECTO 3: CHURN PROJECT */}
-            <div className="card-spotlight relative group bg-white/5 backdrop-blur-2xl border border-white/20 p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-white/10">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-30 pointer-events-none"></div>
+            <div className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(32px)",
+                WebkitBackdropFilter: "blur(32px)",
+                border: "1px solid rgba(255,255,255,0.09)",
+                boxShadow: `
+                  0 8px 40px rgba(0,0,0,0.3),
+                  0 1px 0 rgba(255,255,255,0.12) inset,
+                  0 -1px 0 rgba(255,255,255,0.03) inset,
+                  1px 0 0 rgba(255,255,255,0.05) inset,
+                  -1px 0 0 rgba(255,255,255,0.05) inset
+                `,
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.16)";
+                e.currentTarget.style.boxShadow = `
+                  0 24px 64px rgba(0,0,0,0.4),
+                  0 1px 0 rgba(255,255,255,0.22) inset,
+                  0 -1px 0 rgba(255,255,255,0.05) inset,
+                  1px 0 0 rgba(255,255,255,0.08) inset,
+                  -1px 0 0 rgba(255,255,255,0.08) inset
+                `;
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)";
+                e.currentTarget.style.boxShadow = `
+                  0 8px 40px rgba(0,0,0,0.3),
+                  0 1px 0 rgba(255,255,255,0.12) inset,
+                  0 -1px 0 rgba(255,255,255,0.03) inset,
+                  1px 0 0 rgba(255,255,255,0.05) inset,
+                  -1px 0 0 rgba(255,255,255,0.05) inset
+                `;
+              }}
+            >
+              {/* Línea de luz superior */}
+              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+                style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)" }} />
+
+              {/* Reflejo diagonal principal */}
+              <span className="pointer-events-none absolute inset-0"
+                style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.07) 0%,transparent 45%)", borderRadius: "24px" }} />
+
+              {/* Destello esquina inferior derecha */}
+              <span className="pointer-events-none absolute -bottom-8 -right-8 w-40 h-40"
+                style={{ background: "radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%)" }} />
 
               <div className="flex items-center gap-3 mb-6 relative z-10">
                 <div className="p-2 bg-blue-500/10 rounded-lg">
