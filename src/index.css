@@ -25,11 +25,18 @@ body {
   color: #ffffff;
   min-height: 100vh;
 
-  background-color: #0f1123;
-  background-image: 
-    radial-gradient(circle at 50% 100%, rgba(67, 217, 255, 0.397) 0%, transparent 60%), /* Light blue bottom */
-    radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.25) 0%, transparent 50%), /* Purple top left */
-    radial-gradient(circle at 90% 30%, rgba(131, 142, 236, 0.24) 0%, transparent 50%); /* Indigo right */
+  background-color: #0a0a1a;
+  background-image:
+    /* Morado profundo — esquina superior izquierda */
+    radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.30) 0%, transparent 50%),
+    /* Azul suave — esquina superior derecha */
+    radial-gradient(circle at 90% 15%, rgba(96, 165, 250, 0.18) 0%, transparent 45%),
+    /* Celeste — parte inferior centro */
+    radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.22) 0%, transparent 55%),
+    /* Morado oscuro — parte inferior izquierda */
+    radial-gradient(circle at 5% 85%, rgba(167, 139, 250, 0.15) 0%, transparent 40%),
+    /* Teal muy sutil — centro */
+    radial-gradient(circle at 75% 60%, rgba(20, 184, 166, 0.08) 0%, transparent 40%);
   background-attachment: fixed;
 }
 
