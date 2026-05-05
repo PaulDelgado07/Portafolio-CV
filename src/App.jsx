@@ -563,108 +563,196 @@ function App() {
           </div>
         </section>
 
+        
+
         <div className="max-w-10xl mx-auto px-10">
           <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-700 to-transparent opacity-50"></div>
         </div>
 
         {/* EXPERIENCIA (TIMELINE) */}
-        {/* SECCIÓN EXPERIENCIAS Y CHARLAS - DISEÑO GLOW FUSIONADO */}
+        {/* SECCIÓN EXPERIENCIAS Y CHARLAS */}
         <section id="experiencia" className="py-20 px-6 md:px-10 max-w-4xl mx-auto">
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white tracking-tight">Experiencias y Charlas</h2>
             <div className="h-1 w-16 bg-blue-600 mt-2 rounded-full"></div>
           </div>
 
-          <div className="relative border-l-2 border-slate-800 ml-4">
-            
-            {/* ITEM 1: FLISOL - PUNTOS BRILLANTES */}
+          <div className="relative border-l-2 border-white/10 ml-4"
+            style={{ borderImage: "linear-gradient(180deg,transparent,rgba(255,255,255,0.15) 10%,rgba(255,255,255,0.15) 90%,transparent) 1" }}>
+
+            {/* ITEM 1: FLISOL */}
             <div className="mb-12 ml-8 relative group">
               <div className="absolute -left-[41px] top-1.5 h-5 w-5 rounded-full bg-[#0b1223] border-2 border-blue-500 group-hover:bg-blue-500 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.8)] transition-all duration-300"></div>
-              <div className="mb-2">
-                <span className="text-xs font-bold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-2 py-1 rounded">
-                  Ponente
-                </span>
+              <div
+                className="p-6 rounded-2xl overflow-hidden relative transition-all duration-500"
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  backdropFilter: "blur(24px)",
+                  WebkitBackdropFilter: "blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = "rgba(59,130,246,0.25)";
+                  e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.18)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                  e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)";
+                }}
+              >
+                <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+                  style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)" }} />
+                <span className="pointer-events-none absolute inset-0"
+                  style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 50%)", borderRadius: "16px" }} />
+                <div className="mb-2 relative z-10">
+                  <span className="text-xs font-bold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-2 py-1 rounded">Ponente</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mt-1 group-hover:text-blue-400 transition-colors relative z-10">Charla FLISOL – Universidad Católica del Ecuador</h3>
+                <p className="text-slate-300 font-medium mt-1 relative z-10">Automatización CI/CD con Git</p>
+                <p className="text-slate-400 mt-2 text-sm leading-relaxed relative z-10">Comparativa entre plataformas libres y propietarias. Analicé flujos de automatización, despliegue continuo y herramientas modernas de integración.</p>
               </div>
-              <h3 className="text-xl font-bold text-white mt-1 group-hover:text-blue-400 transition-colors">
-                Charla FLISOL – Universidad Católica del Ecuador
-              </h3>
-              <p className="text-slate-300 font-medium mt-1">Automatización CI/CD con Git</p>
-              <p className="text-slate-400 mt-2 text-sm leading-relaxed">
-                Comparativa entre plataformas libres y propietarias. Analicé flujos de automatización, despliegue continuo y herramientas modernas de integración.
-              </p>
             </div>
 
-            {/* ITEM 2: IA - ESTILO INVESTIGACIÓN (MORADO) */}
+            {/* ITEM 2: IA */}
             <div className="mb-12 ml-8 relative group">
-              {/* Punto neón morado */}
               <div className="absolute -left-[41px] top-1.5 h-5 w-5 rounded-full bg-[#0b1223] border-2 border-purple-600 group-hover:bg-purple-600 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.8)] transition-all duration-300"></div>
-              
-              <div className="mb-2">
-                <span className="text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2 py-1 rounded transition-colors">
-                  Investigación
-                </span>
+              <div
+                className="p-6 rounded-2xl overflow-hidden relative transition-all duration-500"
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  backdropFilter: "blur(24px)",
+                  WebkitBackdropFilter: "blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = "rgba(168,85,247,0.25)";
+                  e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.18)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                  e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)";
+                }}
+              >
+                <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+                  style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)" }} />
+                <span className="pointer-events-none absolute inset-0"
+                  style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 50%)", borderRadius: "16px" }} />
+                <div className="mb-2 relative z-10">
+                  <span className="text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2 py-1 rounded">Investigación</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mt-1 group-hover:text-purple-400 transition-colors relative z-10">Construcción de arquitecturas escalables de IA</h3>
+                <p className="text-slate-400 mt-2 text-sm leading-relaxed font-light relative z-10">
+                  Uso de <span className="text-purple-400 font-medium">LangGraph</span> para implementar agentes de IA modulares, escalables y con manejo avanzado de estados.
+                </p>
               </div>
-              
-              <h3 className="text-xl font-bold text-white mt-1 group-hover:text-purple-400 transition-colors">
-                Construcción de arquitecturas escalables de IA
-              </h3>
-              
-              <p className="text-slate-400 mt-2 text-sm leading-relaxed font-light">
-                Uso de <span className="text-purple-400 font-medium">LangGraph</span> para implementar agentes de IA modulares, escalables y con manejo avanzado de estados.
-              </p>
             </div>
 
-            {/* ITEM 3: NEOVIM - PRODUCTIVIDAD (NARANJA) */}
+            {/* ITEM 3: NEOVIM */}
             <div className="mb-12 ml-8 relative group">
-              {/* Punto neón naranja */}
               <div className="absolute -left-[41px] top-1.5 h-5 w-5 rounded-full bg-[#0b1223] border-2 border-orange-600 group-hover:bg-orange-500 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.8)] transition-all duration-300"></div>
-              
-              <div className="mb-2">
-                <span className="text-xs font-bold text-orange-400 uppercase tracking-widest bg-orange-500/10 px-2 py-1 rounded">
-                  Productividad
-                </span>
+              <div
+                className="p-6 rounded-2xl overflow-hidden relative transition-all duration-500"
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  backdropFilter: "blur(24px)",
+                  WebkitBackdropFilter: "blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = "rgba(249,115,22,0.25)";
+                  e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.18)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                  e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)";
+                }}
+              >
+                <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+                  style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)" }} />
+                <span className="pointer-events-none absolute inset-0"
+                  style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 50%)", borderRadius: "16px" }} />
+                <div className="mb-2 relative z-10">
+                  <span className="text-xs font-bold text-orange-400 uppercase tracking-widest bg-orange-500/10 px-2 py-1 rounded">Productividad</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mt-1 group-hover:text-orange-400 transition-colors relative z-10">Configuración blazingly fast con Neovim</h3>
+                <p className="text-slate-400 mt-2 text-sm leading-relaxed relative z-10">
+                  Configuración de entornos ultra rápidos para desarrollo, optimización con plugins, <span className="text-orange-300/80">LSPs</span> y flujos automatizados.
+                </p>
               </div>
-              
-              <h3 className="text-xl font-bold text-white mt-1 group-hover:text-orange-400 transition-colors">
-                Configuración blazingly fast con Neovim
-              </h3>
-              
-              <p className="text-slate-400 mt-2 text-sm leading-relaxed">
-                Configuración de entornos ultra rápidos para desarrollo, optimización con plugins, <span className="text-orange-300/80">LSPs</span> y flujos automatizados.
-              </p>
             </div>
 
             {/* ITEM 4: TALLERISTA */}
             <div className="mb-12 ml-8 relative group">
               <div className="absolute -left-[41px] top-1.5 h-5 w-5 rounded-full bg-[#0b1223] border-2 border-blue-500 group-hover:bg-blue-500 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.8)] transition-all duration-300"></div>
-              <div className="mb-2">
-                <span className="text-xs font-bold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-2 py-1 rounded">
-                  Tallerista
-                </span>
+              <div
+                className="p-6 rounded-2xl overflow-hidden relative transition-all duration-500"
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  backdropFilter: "blur(24px)",
+                  WebkitBackdropFilter: "blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = "rgba(59,130,246,0.25)";
+                  e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.18)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                  e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)";
+                }}
+              >
+                <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+                  style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)" }} />
+                <span className="pointer-events-none absolute inset-0"
+                  style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 50%)", borderRadius: "16px" }} />
+                <div className="mb-2 relative z-10">
+                  <span className="text-xs font-bold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-2 py-1 rounded">Tallerista</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mt-1 group-hover:text-blue-400 transition-colors relative z-10">Análisis de datos de diagrama gráfico</h3>
+                <p className="text-slate-400 mt-2 text-sm leading-relaxed relative z-10">
+                  Aprendizaje Automático para predecir temperatura corporal como variable de sistemas de climatización eficientes.
+                  <span className="block mt-2 text-slate-500 italic">Variables: edad, peso, altura, temperatura ambiente, humedad, foto, fecha y hora.</span>
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white mt-1 group-hover:text-blue-400 transition-colors">
-                Análisis de datos de diagrama gráfico
-              </h3>
-              <p className="text-slate-400 mt-2 text-sm leading-relaxed">
-                Aprendizaje Automático para predecir temperatura corporal como variable de sistemas de climatización eficientes. 
-                <span className="block mt-2 text-slate-500 italic">Variables: edad, peso, altura, temperatura ambiente, humedad, foto, fecha y hora.</span>
-              </p>
             </div>
 
-            {/* ITEM 5: REDES - COLOR ESMERALDA */}
+            {/* ITEM 5: REDES */}
             <div className="mb-6 ml-8 relative group">
               <div className="absolute -left-[41px] top-1.5 h-5 w-5 rounded-full bg-[#0b1223] border-2 border-emerald-500 group-hover:bg-emerald-500 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.8)] transition-all duration-300"></div>
-              <div className="mb-2">
-                <span className="text-xs font-bold text-emerald-500 uppercase tracking-widest bg-emerald-500/10 px-2 py-1 rounded">
-                  Infraestructura
-                </span>
+              <div
+                className="p-6 rounded-2xl overflow-hidden relative transition-all duration-500"
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  backdropFilter: "blur(24px)",
+                  WebkitBackdropFilter: "blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = "rgba(16,185,129,0.25)";
+                  e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.18)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                  e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.14)";
+                }}
+              >
+                <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+                  style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)" }} />
+                <span className="pointer-events-none absolute inset-0"
+                  style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 50%)", borderRadius: "16px" }} />
+                <div className="mb-2 relative z-10">
+                  <span className="text-xs font-bold text-emerald-500 uppercase tracking-widest bg-emerald-500/10 px-2 py-1 rounded">Infraestructura</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mt-1 group-hover:text-emerald-400 transition-colors relative z-10">Habilidades técnicas complementarias</h3>
+                <p className="text-slate-400 mt-2 text-sm leading-relaxed relative z-10">
+                  Manipulación y armado de conectores <span className="text-slate-200">RJ45</span> con estándares <span className="text-slate-200">T568A / T568B</span> para redes estructuradas.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white mt-1 group-hover:text-emerald-400 transition-colors">
-                Habilidades técnicas complementarias
-              </h3>
-              <p className="text-slate-400 mt-2 text-sm leading-relaxed">
-                Manipulación y armado de conectores <span className="text-slate-200">RJ45</span> con estándares <span className="text-slate-200">T568A / T568B</span> para redes estructuradas.
-              </p>
             </div>
 
           </div>
@@ -1060,80 +1148,112 @@ function App() {
       </main>
 
       {/* FOOTER FINAL */}
-      <footer className="relative py-12 px-6 border-t border-slate-900 bg-[#0f172a] overflow-hidden group">
-        
-        {/* Luz tipo agua - Aparece suavemente al hacer hover sobre el footer */}
-        <div 
-          className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+      <footer
+        className="relative overflow-hidden px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6"
+        style={{
+          background: "rgba(255,255,255,0.04)",
+          backdropFilter: "blur(32px)",
+          WebkitBackdropFilter: "blur(32px)",
+          borderTop: "1px solid rgba(255,255,255,0.09)",
+          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18), 0 -8px 40px rgba(0,0,0,0.2)",
+        }}
+      >
+        {/* Línea de luz superior */}
+        <span
+          className="pointer-events-none absolute top-0 left-0 right-0 h-px"
           style={{
-            background: `radial-gradient(
-                circle at 50% 50%, 
-                rgba(59,130,246,0.15), 
-                transparent 60%
-            )`
+            background:
+              "linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)",
           }}
-        >
+        />
+
+        {/* Reflejo diagonal */}
+        <span
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 50%)",
+          }}
+        />
+
+        {/* Destello esquina derecha */}
+        <span
+          className="pointer-events-none absolute -bottom-10 -right-10 w-52 h-52"
+          style={{
+            background:
+              "radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%)",
+            borderRadius: "50%",
+          }}
+        />
+
+        {/* Logo y Copyright */}
+        <div className="flex flex-col items-center md:items-start relative z-10">
+          <div className="flex items-center gap-2 mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#3b82f6"
+              strokeWidth="2"
+            >
+              <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+              <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+              <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+            </svg>
+            <span className="text-white font-bold tracking-tighter uppercase">
+              PDDV
+            </span>
+          </div>
+          <p className="text-slate-500 text-xs">
+            © 2024 Paul David Delgado Vergara.
+          </p>
+          <p className="text-slate-600 text-[10px] mt-1 italic">
+            "Cualquier dato puede ser una historia esperando ser contada."
+          </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 z-10">
-            
-            {/* Logo y Copyright */}
-            <div className="flex flex-col items-center md:items-start">
-                <div className="flex items-center gap-2 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2">
-                        <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
-                        <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
-                        <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
-                    </svg>
-                    <span className="text-white font-bold tracking-tighter uppercase">
-                        PDDV
-                    </span>
-                </div>
-                <p className="text-slate-500 text-xs">
-                    © 2024 Paul David Delgado Vergara.
-                </p>
-                <p className="text-slate-600 text-[10px] mt-1 italic">
-                    "Cualquier dato puede ser una historia esperando ser contada."
-                </p>
-            </div>
+        {/* Redes Sociales */}
+        <div className="flex gap-6 relative z-10">
+          <a
+            href="https://github.com/PaulDelgado07"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-white transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 30 30"
+              className="w-5 h-5 fill-current"
+            >
+              <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z" />
+            </svg>
+            GitHub
+          </a>
 
-            {/* Redes Sociales */}
-            <div className="flex gap-6">
-              
-                <a 
-                  href="https://github.com/PaulDelgado07" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-white transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105"
-                >
-                <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 30 30"
-                    className="w-5 h-5 fill-current"
-                >
-                    <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
-                </svg>
-                    GitHub
-                </a>
-
-                <a 
-                  href="https://linkedin.com/in/tu-usuario" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-[#0077b5] transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105"
-                >
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 48 48"
-                  className="w-5 h-5"
-                >
-                  <path fill="currentColor" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path>
-                  <path fill="white" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36z"></path>
-                </svg>
-                LinkedIn
-                </a>
-            </div>
-            
+          <a
+            href="https://linkedin.com/in/tu-usuario"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-[#0077b5] transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48 48"
+              className="w-5 h-5"
+            >
+              <path
+                fill="currentColor"
+                d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
+              />
+              <path
+                fill="white"
+                d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36z"
+              />
+            </svg>
+            LinkedIn
+          </a>
         </div>
       </footer>
     </div>
