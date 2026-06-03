@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-
+import bgCurves from './assets/bg-curves.svg';
 function App() {
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -9,6 +9,7 @@ function App() {
         const y = e.clientY - rect.top;
         card.style.setProperty('--mouse-x', `${x}px`);
         card.style.setProperty('--mouse-y', `${y}px`);
+        
       });
     };
     window.addEventListener('mousemove', handleMouseMove);
@@ -17,9 +18,16 @@ function App() {
 
   return (
     <div className="min-h-screen text-white font-sans selection:bg-blue-500/30">
-      
-      {/* NAVBAR */}
-      
+    {/* 3. Pegas esta capa fija justo aquí */}
+    <div 
+      className="fixed inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${bgCurves})` }}
+    />
+
+    {/* 4. Envuelves TODO tu contenido actual (Navbar, Sobre Mí, Proyectos, etc.) en este div */}
+    <div className="relative z-10 w-full"></div>
+
+    {/* NAVBAR */}
       <header className="p-6 flex justify-between items-center sticky top-0 z-50 relative overflow-hidden"
         style={{
           background: "rgba(255,255,255,0.04)",
@@ -40,7 +48,7 @@ function App() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"
-            style={{ color: "#a78bfa" }}>
+            style={{ color: "#fffefecc" }}>
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
             <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
@@ -48,7 +56,7 @@ function App() {
           </svg>
           <h1 className="text-xl font-bold"
             style={{
-              background: "linear-gradient(135deg, #60a5fa, #a78bfa, #38bdf8)",
+              background: "linear-gradient(135deg, #353b3377, #ffffff, #242a2c)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -162,29 +170,27 @@ function App() {
               borderRadius: "100px",
               fontSize: "13px",
               fontWeight: "500",
-              background: "rgba(139,92,246,0.18)",
+              background: "rgba(59, 130, 246, 0.18)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
-              border: "1px solid rgba(167,139,250,0.30)",
-              color: "#c4b5fd",
-              boxShadow: "0 4px 20px rgba(139,92,246,0.18), inset 0 1px 0 rgba(255,255,255,0.12)",
+              border: "1px solid rgba(147, 197, 253, 0.30)",
+              color: "#93c5fd",
+              boxShadow: "0 4px 20px rgba(59, 130, 246, 0.18), inset 0 1px 0 rgba(255,255,255,0.12)",
               textDecoration: "none",
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.background = "rgba(139,92,246,0.32)";
+              e.currentTarget.style.background = "rgb(97, 134, 236)";
               e.currentTarget.style.color = "#fff";
-              e.currentTarget.style.boxShadow = "0 8px 28px rgba(139,92,246,0.38)";
+              e.currentTarget.style.boxShadow = "0 8px 28px rgb(53, 65, 119)";
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.background = "rgba(139,92,246,0.18)";
-              e.currentTarget.style.color = "#c4b5fd";
-              e.currentTarget.style.boxShadow = "0 4px 20px rgba(139,92,246,0.18), inset 0 1px 0 rgba(255,255,255,0.12)";
+              e.currentTarget.style.background = "rgba(59, 130, 246, 0.18)";
+              e.currentTarget.style.color = "#ffffff";
+              e.currentTarget.style.boxShadow = "0 4px 20px rgba(59, 130, 246, 0.18), inset 0 1px 0 rgba(255,255,255,0.12)";
             }}
           >
-            {/* Luz superior botón */}
             <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
               style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent)" }} />
-            {/* Reflejo botón */}
             <span className="pointer-events-none absolute inset-0"
               style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.13) 0%,transparent 55%)", borderRadius: "100px" }} />
 
@@ -204,18 +210,18 @@ function App() {
         {/* HERO SECTION */}
         <section className="py-20 px-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg shadow-white/5 mb-4 transition-all duration-300 hover:bg-white/15 hover:border-white/30">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              <span className="text-xs font-medium text-blue-400 uppercase tracking-wider">Disponible para proyectos</span>
+              <span className="text-xs font-medium text-whrite -400 uppercase tracking-wider">Disponible para proyectos</span>
             </div>
             <h2 className="text-5xl font-extrabold mb-4 leading-tight">
               Paúl David{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #60a5fa, #a78bfa, #38bdf8)",
+                  background: "linear-gradient(135deg, #353b3377, #ffffff, #242a2c)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -224,35 +230,35 @@ function App() {
                 Delgado Vergara
               </span>   
             </h2>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <p className="text-slate-300 text-lg leading-relaxed">
               Estudiante de Ciencia de Datos y Desarrollo. Apasionado por crear soluciones útiles que unan tecnología, visión analítica y diseño.
             </p>
             <div className="mt-8 flex gap-4">
-
-            {/* BOTON PROYECTOS */}
+            
+            {/* BOTON PROYECTO */}
             <a href="#Proyectos"
               className="relative overflow-hidden inline-flex items-center justify-center font-medium cursor-pointer transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
               style={{
-                padding: "15px 40px",
+                padding: "10px 26px",
                 borderRadius: "100px",
                 fontSize: "13px",
-                background: "rgba(139, 92, 246, 0.10)",
+                background: "rgba(255, 255, 255, 0.08)",
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
-                border: "1px solid rgba(167, 139, 250, 0.32)",
-                color: "rgba(255,255,255,0.85)",
-                boxShadow: "0 4px 20px rgba(139, 92, 246, 0.20), inset 0 1px 0 rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255, 255, 255, 0.18)",
+                color: "rgba(255, 255, 255, 0.85)",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255,255,255,0.12)",
                 textDecoration: "none",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = "rgba(139, 92, 246, 0.35)";
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.15)";
                 e.currentTarget.style.color = "#fff";
-                e.currentTarget.style.boxShadow = "0 10px 32px rgba(139, 92, 246, 0.35)";
+                e.currentTarget.style.boxShadow = "0 10px 32px rgba(0, 0, 0, 0.20)";
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.background = "rgba(139, 92, 246, 0.20)";
-                e.currentTarget.style.color = "#c4b5fd";
-                e.currentTarget.style.boxShadow = "0 4px 20px rgba(139, 92, 246, 0.20), inset 0 1px 0 rgba(255,255,255,0.12)";
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.08)";
+                e.currentTarget.style.color = "rgba(255, 255, 255, 0.85)";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255,255,255,0.12)";
               }}
             >
               <span className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
@@ -267,38 +273,30 @@ function App() {
                 padding: "10px 26px",
                 borderRadius: "100px",
                 fontSize: "13px",
-                background: "rgba(139, 92, 246, 0.20)",
+                background: "rgba(255, 255, 255, 0.08)",
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
-                border: "1px solid rgba(167, 139, 250, 0.32)",
-                color: "#c4b5fd",
-                boxShadow: "0 4px 20px rgba(139, 92, 246, 0.20), inset 0 1px 0 rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255, 255, 255, 0.18)",
+                color: "rgba(255, 255, 255, 0.85)",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255,255,255,0.12)",
                 textDecoration: "none",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = "rgba(139, 92, 246, 0.35)";
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.15)";
                 e.currentTarget.style.color = "#fff";
-                e.currentTarget.style.boxShadow = "0 10px 32px rgba(139, 92, 246, 0.35)";
+                e.currentTarget.style.boxShadow = "0 10px 32px rgba(0, 0, 0, 0.20)";
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.background = "rgba(139, 92, 246, 0.20)";
-                e.currentTarget.style.color = "#c4b5fd";
-                e.currentTarget.style.boxShadow = "0 4px 20px rgba(139, 92, 246, 0.20), inset 0 1px 0 rgba(255,255,255,0.12)";
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.08)";
+                e.currentTarget.style.color = "rgba(255, 255, 255, 0.85)";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255,255,255,0.12)";
               }}
             >
               <span className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
               <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent" />
               <span className="relative z-10">Contacto</span>
             </a>
-
             </div>
-          </div>
-          <div className="relative w-full md:w-[450px] flex justify-center">
-            <img 
-              src="/lupa.png"
-              alt="Lupa decorativa"
-              className=" w-72 drop-shadow-xl transition-transform duration-500 ease-out hover:scale-110 hover:-translate-y-2 animate-float"
-            />          
           </div>
         </section>
 
@@ -312,14 +310,17 @@ function App() {
             <div className="md:w-1/4">
               <div className="flex items-center gap-3">
                 <div className="h-[2px] w-8 bg-blue-500"></div>
-                <h2 className="text-sm font-bold text-blue-400 uppercase tracking-[0.3em]">Sobre Mí</h2>
+                {/* text-slate-200: Un blanco suave, ideal para el título */}
+                <h2 className="text-sm font-bold text-slate-200 uppercase tracking-[0.3em]">Sobre Mí</h2>
               </div>
-              <p className="mt-6 text-slate-500 italic text-sm leading-relaxed">
+              {/* text-slate-400: Un tono más apagado y elegante para la cita en cursiva */}
+              <p className="mt-6 text-slate-400 italic text-sm leading-relaxed">
                 "Transformando datos en estrategias, y código en experiencias."
               </p>
             </div>
             <div className="md:w-3/4">
-              <p className="text-slate-400 leading-relaxed">
+              {/* text-slate-300: Un gris claro intermedio, perfecto para leer párrafos largos sin encandilar */}
+              <p className="text-slate-300 leading-relaxed">
                 Soy apasionado de la intersección entre la ciencia de datos y el desarrollo de software como estudiante de Ciencias de Datos e Inteligencia Artificial, mi enfoque se centra en transformar datos complejos en soluciones tecnológicas accionables, especializándome en Ingeniería de Datos y Optimización mediante algoritmos avanzados. Me enfoco en construir sistemas que no solo analicen el pasado, sino que optimicen el futuro. Mi objetivo es aprender, construir y mejorar continuamente en cada línea de código y cada modelo que desarrollo.
               </p>
             </div>
@@ -560,6 +561,87 @@ function App() {
                 <a href="/Informe_proyecto.pdf" className="text-sm font-semibold text-slate-500 hover:text-white transition relative z-10">Carpeta del proyecto</a>
               </div>
             </div>
+
+            <div className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(32px)",
+                WebkitBackdropFilter: "blur(32px)",
+                border: "1px solid rgba(255,255,255,0.09)",
+                boxShadow: `
+                  0 8px 40px rgba(0,0,0,0.3),
+                  0 1px 0 rgba(255,255,255,0.12) inset,
+                  0 -1px 0 rgba(255,255,255,0.03) inset,
+                  1px 0 0 rgba(255,255,255,0.05) inset,
+                  -1px 0 0 rgba(255,255,255,0.05) inset
+                `,
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.16)";
+                e.currentTarget.style.boxShadow = `
+                  0 24px 64px rgba(0,0,0,0.4),
+                  0 1px 0 rgba(255,255,255,0.22) inset,
+                  0 -1px 0 rgba(255,255,255,0.05) inset,
+                  1px 0 0 rgba(255,255,255,0.08) inset,
+                  -1px 0 0 rgba(255,255,255,0.08) inset
+                `;
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)";
+                e.currentTarget.style.boxShadow = `
+                  0 8px 40px rgba(0,0,0,0.3),
+                  0 1px 0 rgba(255,255,255,0.12) inset,
+                  0 -1px 0 rgba(255,255,255,0.03) inset,
+                  1px 0 0 rgba(255,255,255,0.05) inset,
+                  -1px 0 0 rgba(255,255,255,0.05) inset
+                `;
+              }}
+            >
+              {/* Línea de luz superior */}
+              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+                style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)" }} />
+
+              {/* Reflejo diagonal principal */}
+              <span className="pointer-events-none absolute inset-0"
+                style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.07) 0%,transparent 45%)", borderRadius: "24px" }} />
+
+              {/* Destello esquina inferior derecha */}
+              <span className="pointer-events-none absolute -bottom-8 -right-8 w-40 h-40"
+                style={{ background: "radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%)" }} />
+
+              {/* ── TODO LO DE ABAJO SIN TOCAR ── */}
+              <div className="flex items-center gap-3 mb-6 relative z-10">
+                <div className="p-2 bg-blue-500/20 rounded-lg backdrop-blur-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="6" cy="12" r="2"/>
+                    <circle cx="18" cy="6" r="2"/>
+                    <circle cx="18" cy="18" r="2"/>
+                    <line x1="8" y1="12" x2="16" y2="6"/>
+                    <line x1="8" y1="12" x2="16" y2="18"/>
+                  </svg>
+                </div>
+                <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Deep Learning</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition relative z-10">
+                Long-Term Time Series Forecasting (LTSF)
+              </h3>
+
+              <p className="text-slate-300 text-sm leading-relaxed mb-6 relative z-10">
+                 Implementación de una red LSTM en PyTorch para el pronóstico de series temporales sobre el dataset ETTh1. Se evaluó su rendimiento en horizontes de predicción de largo plazo, obteniendo resultados competitivos frente a modelos LTSF modernos.
+              </p>
+
+              <a href="https://github.com/Dass-19/LTSF.git"
+                className="flex items-center gap-2 text-sm font-semibold text-white hover:text-blue-400 transition relative z-10">
+                Ver GitHub
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </a>
+            </div>
+
           </div>
         </section>
 
@@ -767,14 +849,14 @@ function App() {
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold text-white tracking-tight">Habilidades Técnicas</h2>
             <div className="h-1 w-20 bg-blue-600 mt-2 mx-auto rounded-full"></div>
-            <p className="text-slate-400 mt-4">Especialización en el ciclo completo de datos y desarrollo moderno.</p>
+            <p className="text-slate-300 mt-4">Especialización en el ciclo completo de datos y desarrollo moderno.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* DATA SCIENCE & AI - (MORADO/BLUE) */}
             <div
-              className="card-spotlight relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+              className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
               style={{
                 background: "rgba(255,255,255,0.06)",
                 backdropFilter: "blur(28px)",
@@ -847,7 +929,7 @@ function App() {
 
             {/* DEVELOPMENT & TOOLS - (NARANJA/BLUE) */}
             <div
-              className="card-spotlight relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+              className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
               style={{
                 background: "rgba(255,255,255,0.06)",
                 backdropFilter: "blur(28px)",
@@ -913,7 +995,7 @@ function App() {
 
             {/* INFRASTRUCTURE & BUSINESS - (EMERALD/BLUE) */}
             <div
-              className="card-spotlight relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+              className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
               style={{
                 background: "rgba(255,255,255,0.06)",
                 backdropFilter: "blur(28px)",
@@ -978,58 +1060,58 @@ function App() {
             </div>
 
             {/* INFRASTRUCTURE & BUSINESS - NUEVA*/}
-            <div
-              className="card-spotlight relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
-              style={{
-                background: "rgba(255,255,255,0.06)",
-                backdropFilter: "blur(28px)",
-                WebkitBackdropFilter: "blur(28px)",
-                border: "1px solid rgba(255,255,255,0.13)",
-                boxShadow: `
-                  0 8px 40px rgba(0,0,0,0.22),
-                  inset 0 1px 0 rgba(255,255,255,0.28),
-                  inset 0 -1px 0 rgba(255,255,255,0.05),
-                  inset 1px 0 0 rgba(255,255,255,0.08),
-                  inset -1px 0 0 rgba(255,255,255,0.08)
-                `,
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.22)";
-                e.currentTarget.style.boxShadow = `
-                  0 20px 60px rgba(0,0,0,0.32),
-                  inset 0 1px 0 rgba(255,255,255,0.35),
-                  inset 0 -1px 0 rgba(255,255,255,0.07),
-                  inset 1px 0 0 rgba(255,255,255,0.12),
-                  inset -1px 0 0 rgba(255,255,255,0.12)
-                `;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.13)";
-                e.currentTarget.style.boxShadow = `
-                  0 8px 40px rgba(0,0,0,0.22),
-                  inset 0 1px 0 rgba(255,255,255,0.28),
-                  inset 0 -1px 0 rgba(255,255,255,0.05),
-                  inset 1px 0 0 rgba(255,255,255,0.08),
-                  inset -1px 0 0 rgba(255,255,255,0.08)
-                `;
-              }}
-            >
-              {/* Línea de luz superior */}
-              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
-                style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent)" }} />
+          <div
+            className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
+            style={{
+              background: "rgba(255,255,255,0.06)",
+              backdropFilter: "blur(28px)",
+              WebkitBackdropFilter: "blur(28px)",
+              border: "1px solid rgba(255,255,255,0.13)",
+              boxShadow: `
+                0 8px 40px rgba(0,0,0,0.22),
+                inset 0 1px 0 rgba(255,255,255,0.28),
+                inset 0 -1px 0 rgba(255,255,255,0.05),
+                inset 1px 0 0 rgba(255,255,255,0.08),
+                inset -1px 0 0 rgba(255,255,255,0.08)
+              `,
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.22)";
+              e.currentTarget.style.boxShadow = `
+                0 20px 60px rgba(0,0,0,0.32),
+                inset 0 1px 0 rgba(255,255,255,0.35),
+                inset 0 -1px 0 rgba(255,255,255,0.07),
+                inset 1px 0 0 rgba(255,255,255,0.12),
+                inset -1px 0 0 rgba(255,255,255,0.12)
+              `;
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.13)";
+              e.currentTarget.style.boxShadow = `
+                0 8px 40px rgba(0,0,0,0.22),
+                inset 0 1px 0 rgba(255,255,255,0.28),
+                inset 0 -1px 0 rgba(255,255,255,0.05),
+                inset 1px 0 0 rgba(255,255,255,0.08),
+                inset -1px 0 0 rgba(255,255,255,0.08)
+              `;
+            }}
+          >
+            {/* Línea de luz superior */}
+            <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
+              style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent)" }} />
 
-              {/* Reflejo diagonal */}
-              <span className="pointer-events-none absolute inset-0"
-                style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.1) 0%,transparent 50%)", borderRadius: "24px" }} />
+            {/* Reflejo diagonal */}
+            <span className="pointer-events-none absolute inset-0"
+              style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.1) 0%,transparent 50%)", borderRadius: "24px" }} />
 
-              {/* Destello esquina inferior derecha */}
-              <span className="pointer-events-none absolute -bottom-5 -right-5 w-32 h-32"
-                style={{ background: "radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%)", borderRadius: "50%" }} />
+            {/* Destello esquina inferior derecha */}
+            <span className="pointer-events-none absolute -bottom-5 -right-5 w-32 h-32"
+              style={{ background: "radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%)", borderRadius: "50%" }} />
 
-              {/* ── CONTENIDO SIN TOCAR ── */}
-              <div className="flex items-center gap-3 mb-6 relative z-10">
-                <div className="p-2 bg-red-500/20 rounded-lg text-red-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            {/* ── CONTENIDO SIN TOCAR ── */}
+            <div className="flex items-center gap-3 mb-6 relative z-10">
+              <div className="p-2 bg-red-500/20 rounded-lg text-red-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="3"></circle>
                   <path d="M12 2v4"></path>
                   <path d="M12 18v4"></path>
@@ -1040,18 +1122,18 @@ function App() {
                   <path d="M4.93 19.07l2.83-2.83"></path>
                   <path d="M16.24 7.76l2.83-2.83"></path>
                 </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white">Stack Tecnológico</h3>
               </div>
-
-              <div className="flex flex-wrap gap-2 relative z-10">
-                {['Python', 'PostgreSQL', 'Java'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-slate-300 hover:border-red-500/50 hover:text-red-300 transition-all cursor-default">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <h3 className="text-xl font-bold text-white">Stack Tecnológico</h3>
             </div>
+
+            <div className="flex flex-wrap gap-2 relative z-10">
+              {['Python', 'PostgreSQL', 'Java'].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-slate-300 hover:border-red-500/50 hover:text-red-300 transition-all cursor-default">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
 
             </div>
         </section>
@@ -1064,7 +1146,7 @@ function App() {
         <section id="contacto" className="py-20 px-6 md:px-10 max-w-4xl mx-auto text-center">
           <div className="mb-10">
             <h2 className="text-3xl font-bold text-white tracking-tight">¿Tienes un proyecto en mente?</h2>
-            <p className="text-slate-400 mt-4 text-lg">Estoy abierto a nuevas oportunidades y colaboraciones en Ciencia de Datos o Desarrollo.</p>
+            <p className="text-slate-300 mt-4 text-lg">Estoy abierto a nuevas oportunidades y colaboraciones en Ciencia de Datos o Desarrollo.</p>
           </div>
 
           {/* Tarjeta Glassmorphism de Contacto */}
@@ -1195,7 +1277,7 @@ function App() {
               height="20"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#3b82f6"
+              stroke="#ffffff"
               strokeWidth="2"
             >
               <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
@@ -1206,10 +1288,10 @@ function App() {
               PDDV
             </span>
           </div>
-          <p className="text-slate-500 text-xs">
+          <p className="text-slate-200 text-xs">
             © 2024 Paul David Delgado Vergara.
           </p>
-          <p className="text-slate-600 text-[10px] mt-1 italic">
+          <p className="text-slate-400 text-[10px] mt-1 italic">
             "Cualquier dato puede ser una historia esperando ser contada."
           </p>
         </div>
@@ -1220,7 +1302,7 @@ function App() {
             href="https://github.com/PaulDelgado07"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-400 hover:text-white transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105"
+            className="text-slate-200 hover:text-white transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1236,7 +1318,7 @@ function App() {
             href="https://linkedin.com/in/tu-usuario"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-400 hover:text-[#0077b5] transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105"
+            className="text-slate-300 hover:text-[#0077b5] transition-all duration-300 flex items-center gap-2 text-sm hover:scale-105"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
