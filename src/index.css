@@ -26,7 +26,8 @@ body {
   min-height: 100vh;
 
   background-color: #0a0a1a;
-  background-image:
+  /* SVG background (placed behind other gradient layers) */
+  background-image: url('./assets/bg-curves.svg'),
     /* Morado profundo — esquina superior izquierda */
     radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.30) 0%, transparent 50%),
     /* Azul suave — esquina superior derecha */
@@ -37,6 +38,9 @@ body {
     radial-gradient(circle at 5% 85%, rgba(167, 139, 250, 0.15) 0%, transparent 40%),
     /* Teal muy sutil — centro */
     radial-gradient(circle at 75% 60%, rgba(20, 184, 166, 0.08) 0%, transparent 40%);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 

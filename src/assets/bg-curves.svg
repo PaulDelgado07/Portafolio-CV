@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="661" height="303" viewBox="0 0 661 303">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a0e"/>
+      <stop offset="40%" stop-color="#151921"/>
+      <stop offset="100%" stop-color="#6a7a88"/>
+    </linearGradient>
+    
+    <linearGradient id="arc1" x1="0%" y1="0%" x2="100%" y2="20%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="30%" stop-color="rgba(200,210,220,0.4)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0.8)"/>
+      <stop offset="70%" stop-color="rgba(200,210,220,0.4)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    
+    <linearGradient id="arc2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="20%" stop-color="rgba(220,230,240,0.5)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0.9)"/>
+      <stop offset="80%" stop-color="rgba(200,210,220,0.4)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    
+    <linearGradient id="arc3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="25%" stop-color="rgba(180,190,200,0.3)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0.6)"/>
+      <stop offset="75%" stop-color="rgba(180,190,200,0.3)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    
+    <filter id="blur1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="blur3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  
+  <path d="M -20,90 Q 180,10 420,75 T 680,55" 
+        fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="12" filter="url(#blur3)"/>
+  
+  <path d="M -20,85 Q 180,5 420,70 T 680,50" 
+        fill="none" stroke="url(#arc1)" stroke-width="3" filter="url(#blur1)"/>
+  
+  <path d="M -20,84 Q 180,4 420,69 T 680,49" 
+        fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  
+  <path d="M 290,-10 Q 265,150 330,320" 
+        fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="20" filter="url(#blur3)"/>
+  
+  <path d="M 288,-10 Q 263,150 328,320" 
+        fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="10" filter="url(#blur2)"/>
+  
+  <path d="M 285,-10 Q 260,150 325,320" 
+        fill="none" stroke="url(#arc2)" stroke-width="4" filter="url(#blur1)"/>
+  
+  <path d="M 284,-10 Q 259,150 324,320" 
+        fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  
+  <path d="M 530,-10 Q 490,150 535,320" 
+        fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="16" filter="url(#blur3)"/>
+  
+  <path d="M 528,-10 Q 488,150 533,320" 
+        fill="none" stroke="url(#arc3)" stroke-width="3" filter="url(#blur1)"/>
+  
+  <path d="M 527,-10 Q 487,150 532,320" 
+        fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  
+  <ellipse cx="285" cy="55" rx="15" ry="8" fill="rgba(255,255,255,0.05)" filter="url(#blur2)"/>
+</svg>
