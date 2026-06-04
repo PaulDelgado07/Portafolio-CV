@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import bgCurves from './assets/bg-curves.svg';
 function App() {
   useEffect(() => {
@@ -1338,6 +1339,7 @@ function App() {
           </a>
         </div>
       </footer>
+      <SpeedInsights />
     </div>
   )
 }
