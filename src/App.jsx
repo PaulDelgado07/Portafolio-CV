@@ -1,13 +1,16 @@
 import { useEffect } from 'react'
 import { BlossomCarousel } from '@blossom-carousel/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import bgCurves from './assets/bg-curves.svg';
+import bgCurves from './assets/fondo_adecuado.svg';
 import pythonLogo from './assets/python_logo.png'
 import javaLogo from './assets/java_logo.png'
 import reactlogo from './assets/react_logo.png'
 import dockerLogo from './assets/docker_icon.png'
 import githubLogo from './assets/github_logo.png'
 import postgresLogo from './assets/postgres_logo.png'
+import apacheLogo from './assets/apache_logo.png'
+import mysqlLogo from './assets/mySQL_logo.png'
+import mongoLogo from './assets/mongo_logo.png'
 
 function App() {
   useEffect(() => {
@@ -34,7 +37,7 @@ function App() {
     />
 
     {/* 4. Envuelves TODO tu contenido actual (Navbar, Sobre Mí, Proyectos, etc.) en este div */}
-    <div className="relative z-10 w-full"></div>
+    <div className="relative z-10 w-full">
 
     {/* NAVBAR */}
       <header className="p-6 flex justify-between items-center sticky top-0 z-50 relative overflow-hidden"
@@ -861,7 +864,7 @@ function App() {
             <p className="text-slate-300 mt-4">Especialización en el ciclo completo de datos y desarrollo moderno.</p>
           </div>
 
-          <BlossomCarousel className="hide-scrollbar" style={{ display: 'flex', flexDirection: 'row', overflowX: 'auto', overflowY: 'visible', gap: '2rem', padding: '2rem 1rem' }}>
+          <BlossomCarousel className="hide-scrollbar" style={{ display: 'flex', flexDirection: 'row', overflowX: 'auto', overflowY: 'visible', gap: '2rem', padding: '2rem 1rem', marginLeft: '-10rem', marginRight: '-10rem', paddingLeft: '10rem', paddingRight: '10rem' }}>
 
             {[
               { name: 'Python', image: pythonLogo },
@@ -870,6 +873,9 @@ function App() {
               { name: 'React', image : reactlogo },
               { name: 'PostgreSQL', image: postgresLogo },
               { name: 'Docker', image: dockerLogo },
+              { name: 'Hadoop', image: apacheLogo },
+              { name: 'MySQL', image: mysqlLogo },
+              { name: 'MongoDB', image: mongoLogo },
             ].map((tech) => (
               <div
                 key={tech.name}
@@ -1099,6 +1105,7 @@ function App() {
       </footer>
       <SpeedInsights />
     </div>
+  </div>
   )
 }
 
