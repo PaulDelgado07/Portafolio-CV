@@ -3,6 +3,8 @@
 /* 1. Fondo Global y Scroll */
 html {
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  background-color: #0a0a1a;
 }
 
 .titulo-gradient {
