@@ -109,3 +109,11 @@ section {
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

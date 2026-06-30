@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BlossomCarousel } from '@blossom-carousel/react'
 import './index.css'
 import App from './App.jsx'
 
