@@ -1,6 +1,14 @@
 import { useEffect } from 'react'
+import { BlossomCarousel } from '@blossom-carousel/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import bgCurves from './assets/bg-curves.svg';
+import pythonLogo from './assets/python_logo.png'
+import javaLogo from './assets/java_logo.png'
+import reactlogo from './assets/react_logo.png'
+import dockerLogo from './assets/docker_icon.png'
+import githubLogo from './assets/github_logo.png'
+import postgresLogo from './assets/postgres_logo.png'
+
 function App() {
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -846,297 +854,47 @@ function App() {
         </div>
 
         {/* SECCIÓN HABILIDADES TÉCNICAS */}
-        <section id="habilidades" className="py-20 px-6 md:px-10 max-w-6xl mx-auto">
+        <section id="habilidades" className="py-20 px-6 md:px-10 max-w-6xl mx-auto overflow-visible">
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold text-white tracking-tight">Habilidades Técnicas</h2>
             <div className="h-1 w-20 bg-blue-600 mt-2 mx-auto rounded-full"></div>
             <p className="text-slate-300 mt-4">Especialización en el ciclo completo de datos y desarrollo moderno.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* DATA SCIENCE & AI - (MORADO/BLUE) */}
-            <div
-              className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
-              style={{
-                background: "rgba(255,255,255,0.06)",
-                backdropFilter: "blur(28px)",
-                WebkitBackdropFilter: "blur(28px)",
-                border: "1px solid rgba(255,255,255,0.13)",
-                boxShadow: `
-                  0 8px 40px rgba(0,0,0,0.22),
-                  inset 0 1px 0 rgba(255,255,255,0.28),
-                  inset 0 -1px 0 rgba(255,255,255,0.05),
-                  inset 1px 0 0 rgba(255,255,255,0.08),
-                  inset -1px 0 0 rgba(255,255,255,0.08)
-                `,
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.22)";
-                e.currentTarget.style.boxShadow = `
-                  0 20px 60px rgba(0,0,0,0.32),
-                  inset 0 1px 0 rgba(255,255,255,0.35),
-                  inset 0 -1px 0 rgba(255,255,255,0.07),
-                  inset 1px 0 0 rgba(255,255,255,0.12),
-                  inset -1px 0 0 rgba(255,255,255,0.12)
-                `;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.13)";
-                e.currentTarget.style.boxShadow = `
-                  0 8px 40px rgba(0,0,0,0.22),
-                  inset 0 1px 0 rgba(255,255,255,0.28),
-                  inset 0 -1px 0 rgba(255,255,255,0.05),
-                  inset 1px 0 0 rgba(255,255,255,0.08),
-                  inset -1px 0 0 rgba(255,255,255,0.08)
-                `;
-              }}
-            >
-              {/* Línea de luz superior */}
-              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
-                style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent)" }} />
+          <BlossomCarousel className="hide-scrollbar" style={{ display: 'flex', flexDirection: 'row', overflowX: 'auto', overflowY: 'visible', gap: '2rem', padding: '2rem 1rem' }}>
 
-              {/* Reflejo diagonal */}
-              <span className="pointer-events-none absolute inset-0"
-                style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.1) 0%,transparent 50%)", borderRadius: "24px" }} />
-
-              {/* Destello esquina inferior derecha */}
-              <span className="pointer-events-none absolute -bottom-5 -right-5 w-32 h-32"
-                style={{ background: "radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%)", borderRadius: "50%" }} />
-
-              {/* ── CONTENIDO SIN TOCAR ── */}
-              <div className="flex items-center gap-3 mb-6 relative z-10">
-                <div className="p-2 bg-purple-500/20 rounded-lg text-purple-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white">Data Science & AI</h3>
+            {[
+              { name: 'Python', image: pythonLogo },
+              { name: 'Java', image: javaLogo },
+              { name: 'GitHub', image: githubLogo },
+              { name: 'React', image : reactlogo },
+              { name: 'PostgreSQL', image: postgresLogo },
+              { name: 'Docker', image: dockerLogo },
+            ].map((tech) => (
+              <div
+                key={tech.name}
+                className="relative flex flex-col items-center justify-center transition-all duration-500 hover:-translate-y-1"
+                style={{
+                  minWidth: '200px',
+                  height: '260px',
+                  borderRadius: '50%',
+                  background: "rgba(255,255,255,0.06)",
+                  backdropFilter: "blur(28px)",
+                  WebkitBackdropFilter: "blur(28px)",
+                  border: "1px solid rgba(255,255,255,0.13)",
+                  boxShadow: `0 8px 40px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.28)`,
+                }}
+              >
+                {tech.image ? (
+                  <img src={tech.image} alt={tech.name} style={{ width: '64px', height: '64px', objectFit: 'contain' }} />
+                ) : (
+                  <span style={{ fontSize: '64px' }}>{tech.emoji}</span>
+                )}
+                <h3 className="text-xl font-bold text-white mt-4">{tech.name}</h3>
               </div>
+            ))}
 
-              <div className="flex flex-wrap gap-2 relative z-10">
-                {['LangGraph', 'Machine Learning', 'Pandas', 'NLP'].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-slate-300 hover:border-purple-500/50 hover:text-purple-300 transition-all cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* DEVELOPMENT & TOOLS - (NARANJA/BLUE) */}
-            <div
-              className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
-              style={{
-                background: "rgba(255,255,255,0.06)",
-                backdropFilter: "blur(28px)",
-                WebkitBackdropFilter: "blur(28px)",
-                border: "1px solid rgba(255,255,255,0.13)",
-                boxShadow: `
-                  0 8px 40px rgba(0,0,0,0.22),
-                  inset 0 1px 0 rgba(255,255,255,0.28),
-                  inset 0 -1px 0 rgba(255,255,255,0.05),
-                  inset 1px 0 0 rgba(255,255,255,0.08),
-                  inset -1px 0 0 rgba(255,255,255,0.08)
-                `,
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.22)";
-                e.currentTarget.style.boxShadow = `
-                  0 20px 60px rgba(0,0,0,0.32),
-                  inset 0 1px 0 rgba(255,255,255,0.35),
-                  inset 0 -1px 0 rgba(255,255,255,0.07),
-                  inset 1px 0 0 rgba(255,255,255,0.12),
-                  inset -1px 0 0 rgba(255,255,255,0.12)
-                `;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.13)";
-                e.currentTarget.style.boxShadow = `
-                  0 8px 40px rgba(0,0,0,0.22),
-                  inset 0 1px 0 rgba(255,255,255,0.28),
-                  inset 0 -1px 0 rgba(255,255,255,0.05),
-                  inset 1px 0 0 rgba(255,255,255,0.08),
-                  inset -1px 0 0 rgba(255,255,255,0.08)
-                `;
-              }}
-            >
-              {/* Línea de luz superior */}
-              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
-                style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent)" }} />
-
-              {/* Reflejo diagonal */}
-              <span className="pointer-events-none absolute inset-0"
-                style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.1) 0%,transparent 50%)", borderRadius: "24px" }} />
-
-              {/* Destello esquina inferior derecha */}
-              <span className="pointer-events-none absolute -bottom-5 -right-5 w-32 h-32"
-                style={{ background: "radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%)", borderRadius: "50%" }} />
-
-              {/* ── CONTENIDO SIN TOCAR ── */}
-              <div className="flex items-center gap-3 mb-6 relative z-10">
-                <div className="p-2 bg-orange-500/20 rounded-lg text-orange-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                </div>
-                <h3 className="text-xl font-bold text-white">Dev & Tools</h3>
-              </div>
-
-              <div className="flex flex-wrap gap-2 relative z-10">
-                {['React', 'Tailwind CSS', 'Neovim', 'Git/GitHub', 'CI/CD', 'Docker'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-slate-300 hover:border-orange-500/50 hover:text-orange-300 transition-all cursor-default">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* INFRASTRUCTURE & BUSINESS - (EMERALD/BLUE) */}
-            <div
-              className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
-              style={{
-                background: "rgba(255,255,255,0.06)",
-                backdropFilter: "blur(28px)",
-                WebkitBackdropFilter: "blur(28px)",
-                border: "1px solid rgba(255,255,255,0.13)",
-                boxShadow: `
-                  0 8px 40px rgba(0,0,0,0.22),
-                  inset 0 1px 0 rgba(255,255,255,0.28),
-                  inset 0 -1px 0 rgba(255,255,255,0.05),
-                  inset 1px 0 0 rgba(255,255,255,0.08),
-                  inset -1px 0 0 rgba(255,255,255,0.08)
-                `,
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.22)";
-                e.currentTarget.style.boxShadow = `
-                  0 20px 60px rgba(0,0,0,0.32),
-                  inset 0 1px 0 rgba(255,255,255,0.35),
-                  inset 0 -1px 0 rgba(255,255,255,0.07),
-                  inset 1px 0 0 rgba(255,255,255,0.12),
-                  inset -1px 0 0 rgba(255,255,255,0.12)
-                `;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.13)";
-                e.currentTarget.style.boxShadow = `
-                  0 8px 40px rgba(0,0,0,0.22),
-                  inset 0 1px 0 rgba(255,255,255,0.28),
-                  inset 0 -1px 0 rgba(255,255,255,0.05),
-                  inset 1px 0 0 rgba(255,255,255,0.08),
-                  inset -1px 0 0 rgba(255,255,255,0.08)
-                `;
-              }}
-            >
-              {/* Línea de luz superior */}
-              <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
-                style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent)" }} />
-
-              {/* Reflejo diagonal */}
-              <span className="pointer-events-none absolute inset-0"
-                style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.1) 0%,transparent 50%)", borderRadius: "24px" }} />
-
-              {/* Destello esquina inferior derecha */}
-              <span className="pointer-events-none absolute -bottom-5 -right-5 w-32 h-32"
-                style={{ background: "radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%)", borderRadius: "50%" }} />
-
-              {/* ── CONTENIDO SIN TOCAR ── */}
-              <div className="flex items-center gap-3 mb-6 relative z-10">
-                <div className="p-2 bg-emerald-500/20 rounded-lg text-emerald-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-                </div>
-                <h3 className="text-xl font-bold text-white">Infra & Business</h3>
-              </div>
-
-              <div className="flex flex-wrap gap-2 relative z-10">
-                {['ETL (PDI)', 'Redes T568A/B', 'Pentaho', 'Power BI', 'Linux', 'Data Warehouse'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-slate-300 hover:border-emerald-500/50 hover:text-emerald-300 transition-all cursor-default">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* INFRASTRUCTURE & BUSINESS - NUEVA*/}
-          <div
-            className="relative group p-8 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1"
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              backdropFilter: "blur(28px)",
-              WebkitBackdropFilter: "blur(28px)",
-              border: "1px solid rgba(255,255,255,0.13)",
-              boxShadow: `
-                0 8px 40px rgba(0,0,0,0.22),
-                inset 0 1px 0 rgba(255,255,255,0.28),
-                inset 0 -1px 0 rgba(255,255,255,0.05),
-                inset 1px 0 0 rgba(255,255,255,0.08),
-                inset -1px 0 0 rgba(255,255,255,0.08)
-              `,
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.borderColor = "rgba(255,255,255,0.22)";
-              e.currentTarget.style.boxShadow = `
-                0 20px 60px rgba(0,0,0,0.32),
-                inset 0 1px 0 rgba(255,255,255,0.35),
-                inset 0 -1px 0 rgba(255,255,255,0.07),
-                inset 1px 0 0 rgba(255,255,255,0.12),
-                inset -1px 0 0 rgba(255,255,255,0.12)
-              `;
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.borderColor = "rgba(255,255,255,0.13)";
-              e.currentTarget.style.boxShadow = `
-                0 8px 40px rgba(0,0,0,0.22),
-                inset 0 1px 0 rgba(255,255,255,0.28),
-                inset 0 -1px 0 rgba(255,255,255,0.05),
-                inset 1px 0 0 rgba(255,255,255,0.08),
-                inset -1px 0 0 rgba(255,255,255,0.08)
-              `;
-            }}
-          >
-            {/* Línea de luz superior */}
-            <span className="pointer-events-none absolute top-0 left-0 right-0 h-px"
-              style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent)" }} />
-
-            {/* Reflejo diagonal */}
-            <span className="pointer-events-none absolute inset-0"
-              style={{ background: "linear-gradient(135deg,rgba(255,255,255,0.1) 0%,transparent 50%)", borderRadius: "24px" }} />
-
-            {/* Destello esquina inferior derecha */}
-            <span className="pointer-events-none absolute -bottom-5 -right-5 w-32 h-32"
-              style={{ background: "radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%)", borderRadius: "50%" }} />
-
-            {/* ── CONTENIDO SIN TOCAR ── */}
-            <div className="flex items-center gap-3 mb-6 relative z-10">
-              <div className="p-2 bg-red-500/20 rounded-lg text-red-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path d="M12 2v4"></path>
-                  <path d="M12 18v4"></path>
-                  <path d="M4.93 4.93l2.83 2.83"></path>
-                  <path d="M16.24 16.24l2.83 2.83"></path>
-                  <path d="M2 12h4"></path>
-                  <path d="M18 12h4"></path>
-                  <path d="M4.93 19.07l2.83-2.83"></path>
-                  <path d="M16.24 7.76l2.83-2.83"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-white">Stack Tecnológico</h3>
-            </div>
-
-            <div className="flex flex-wrap gap-2 relative z-10">
-              {['Python', 'PostgreSQL', 'Java'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-slate-300 hover:border-red-500/50 hover:text-red-300 transition-all cursor-default">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-            </div>
+          </BlossomCarousel>
         </section>
 
         <div className="max-w-10xl mx-auto px-10">
