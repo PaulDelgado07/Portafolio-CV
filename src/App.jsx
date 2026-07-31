@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { BlossomCarousel } from '@blossom-carousel/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import bgCurves from './assets/fondo_adecuado.svg';
+import bgCurves from './assets/bg-curves.svg';
 import pythonLogo from './assets/python_logo.png'
 import javaLogo from './assets/java_logo.png'
 import reactlogo from './assets/react_logo.png'
