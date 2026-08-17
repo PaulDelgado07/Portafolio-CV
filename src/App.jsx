@@ -11,6 +11,7 @@ import postgresLogo from './assets/postgres_logo.png'
 import apacheLogo from './assets/apache_logo.png'
 import mysqlLogo from './assets/mySQL_logo.png'
 import mongoLogo from './assets/mongo_logo.png'
+import ApacheLogo from './assets/Apache.png'
 
 function App() {
   useEffect(() => {
@@ -876,6 +877,8 @@ function App() {
               { name: 'Hadoop', image: apacheLogo },
               { name: 'MySQL', image: mysqlLogo },
               { name: 'MongoDB', image: mongoLogo },
+              { name: 'Apache', image: ApacheLogo },
+
             ].map((tech) => (
               <div
                 key={tech.name}
