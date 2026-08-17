@@ -12,6 +12,9 @@ import apacheLogo from './assets/apache_logo.png'
 import mysqlLogo from './assets/mySQL_logo.png'
 import mongoLogo from './assets/mongo_logo.png'
 import ApacheLogo from './assets/Apache.png'
+import htmlLogo from './assets/html.png'
+import cssLogo from './assets/css.png'
+import javaSLogo from './assets/JavaScript.png'
 
 function App() {
   useEffect(() => {
@@ -871,6 +874,9 @@ function App() {
               { name: 'Python', image: pythonLogo },
               { name: 'Java', image: javaLogo },
               { name: 'GitHub', image: githubLogo },
+              { name: 'HTML', image: htmlLogo},
+              { name: 'CSS', image: cssLogo},
+              { name: 'JavaScript', image: javaSLogo},
               { name: 'React', image : reactlogo },
               { name: 'PostgreSQL', image: postgresLogo },
               { name: 'Docker', image: dockerLogo },
